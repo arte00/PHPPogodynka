@@ -17,6 +17,7 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class MeasurementRepository extends ServiceEntityRepository
 {
+
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Measurement::class);
@@ -40,11 +41,12 @@ class MeasurementRepository extends ServiceEntityRepository
         }
     }
 
-    public function findByLocation(string $location){
+    public function findByLocation(Location $location){
+
         $qb = $this->createQueryBuilder('m');
         $qb->where('m.location = :location')
             ->setParameter('location', $location)
-            ->andWhere('m.date > :now)')
+            ->andWhere('m.date > :now')
             ->setParameter('now', date('Y-m-d'));
 
         $query = $qb->getQuery();

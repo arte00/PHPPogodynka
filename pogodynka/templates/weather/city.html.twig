@@ -8,13 +8,12 @@
         .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
     </style>
     <div class="example-wrapper">
-        <h1>{{ location }}, {{ location }}</h1>
-{#        <h1>{{ location.city }}, {{ location.country }}</h1>#}
-{#        <ul>#}
-{#            {% for measurement in measurements %}#}
-{#                <li>{{ measurement.date|date('d.m.Y') }}: {{ measurement.temperatureCelsius }}&deg;C</li>#}
-{#            {% endfor %}#}
-{#        </ul>#}
+        <h1>{{ location.city }}, {{ location.country }}</h1>
+        <ul>
+            {% for measurement in measurements %}
+                <li>{{ measurement.date|date('d.m.Y') }}: {{ measurement.temperatureCelsius }}&deg;C</li>
+            {% endfor %}
+        </ul>
     </div>
 {% endblock %}
 

@@ -34,7 +34,7 @@ class Measurement
 
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
-    private ?location $location = null;
+    private ?Location $location = null;
 
     public function getId(): ?int
     {

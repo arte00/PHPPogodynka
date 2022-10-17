@@ -3,7 +3,9 @@
 #    controller: App\Controller\DefaultController::index
 
 weather_in_city:
-  path: /weather/{city}
-  controller: App/Controller/WeatherController:cityAction
+  path: /weather/{country}/{city}
+  controller: App\Controller\WeatherController:cityAction
   requirements:
-    city \d+
+    country: "^[A-Z]{2}"
+    city: "^[a-zA-Z]{1,25}$"
+
